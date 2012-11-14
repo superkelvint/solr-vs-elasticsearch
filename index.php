@@ -52,7 +52,7 @@ include_once("inc/header.php");
     <tr>
       <td>3rd-party product integration (commercial)<a href="#" title="3rd-party commercial products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
       <td>DataStax Enterprise Search</td>
-      <td>Unknown</td>
+      <td>SearchBlox</td>
     </tr>
     </tbody>
   </table>
