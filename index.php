@@ -454,7 +454,12 @@ include_once("inc/header.php");
   </li>
   <li>The <a href="http://wiki.apache.org/solr">Solr wiki</a> and the <a href="http://www.elasticsearch.org/guide">ElasticSearch Guide</a> are your friends.</li>
   </ul>
-  <p></p>
+  
+  <br/><hr/>
+  <h2 class="secthead">Contribute</h2>
+  <p>If you see any mistakes, or would like to append to the information on this webpage, you can clone the <a href="https://github.com/superkelvint/solr-vs-elasticsearch">GitHub repo for this site</a> with:</p>
+  <blockquote>git clone https://github.com/superkelvint/solr-vs-elasticsearch</blockquote>
+  <p>and submit a pull request.</p>
   
   <br/><hr/>
   <h2 class="secthead">Popular books related to Search</h2>
