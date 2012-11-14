@@ -1,0 +1,27 @@
+/* GeSHi (c) Nigel McNie 2004 (http://qbnz.com/highlighter) */
+.dean_ch{font-family: 'Droid Sans Mono', monospace;   background:#1e2426;;
+line-height: 1.633;
+color: #EEF0BB;
+  margin: 10px 0;
+  padding: 0px 10px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  border-top: solid 3px #000;
+  border-left: solid 3px #000;
+  border-right: solid 3px #ccc;
+  border-bottom: solid 3px #ccc;
+  overflow: auto;
+}
+.dean_ch .de1, .dean_ch .de2 {font-weight:normal;background:transparent;color:#fff; padding-left: 5px;}
+
+.dean_ch .kw1 {color: #a1a100;}
+.dean_ch .kw2 {color: #fff; font-weight: bold;}
+/*.dean_ch .kw3 {color: #fff066;}*/
+.dean_ch .kw4 {color: #f63333;}
+.dean_ch .co1, .dean_ch .co2, .dean_ch .coMULTI{color: #aaa;}
+.dean_ch .es0 {color: #fff033; font-weight: bold;}
+.dean_ch .br0,.dean_ch .re1 {color: #66cc66;}
+.dean_ch .st0 {color: #ff0000;}
+.dean_ch .nu0 {color: #ff33ff;}
+.dean_ch .me0 {color: #006600;}
+

@@ -1,0 +1,407 @@
+/*
+Theme Name:Clean Home
+Theme URI:http://midmodesign.com/news/general/our-special-wordpress-theme/
+Description:This WordPress theme is one with a minimal, clean looking design and has full CSS widgetization. Special thanks to <a href="http://bryanhelmig.com/">Bryan Helmig</a> of <a href="http://midmodesign.com/">Mid Mo Web Design</a>.
+Version:1.2.0
+Author:Mid Mo Design
+Author URI:http://midmodesign.com/
+Tags:white, red, fixed-width, two-columns, right-sidebar
+
+	"Clean Home" by http://midmodesign.com/
+
+	This theme was designed and built by Bryan Helmig
+	of Mid Mo Design: http://midmodesign.com/.
+
+	The CSS, XHTML and design is released under the GPL.
+
+*/
+
+body {
+font-family:Verdana, serif;
+font-size:14px;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:1.7em;
+}
+a {
+border-bottom:1px dotted #000;
+text-decoration:none;
+color:#e12000;
+font-weight:600;
+}
+a:hover {
+color:#e12000;
+border-bottom:1px dashed #e12000;
+background-color:#f7f7f7;
+}
+hr{
+margin-top:35px;
+border:0;
+border-top:1px dotted #ccc;
+width:720px;
+color:#fff;
+clear:both;
+}
+
+#wrapper {
+width:1000px;
+margin:10px auto;
+}
+#header {
+float:left;
+width:1000px;
+border-bottom:1px dotted #ccc;
+margin:0;
+padding-bottom:15px;
+}
+#logo {
+float:left;
+width:auto;
+padding:0 0 4px 0;
+}
+#logo a {
+color:#ff2b06;
+font-size:60px;
+font-weight:600;
+text-decoration:none;
+border-bottom:none;
+letter-spacing:-4px;
+background-color:#fff;
+}
+#logo h2 {
+font-size : 18px;
+font-weight : 200;
+padding : 12px 4px 0 0;
+letter-spacing : -1px;
+}
+#nav {
+float:right;
+width:auto;
+padding:12px 0 0;
+}
+#nav ul {
+height:50px;
+float:right;
+}
+#nav li {
+text-align:center;
+float:left;
+display:inline;
+width:auto;
+}
+#nav li a {
+font-size:20px;
+font-weight:400;
+display:block;
+padding:15px;
+border-bottom:none;
+}
+#nav li a:hover {
+background-color:#f7f7f7;
+}
+#blurb {
+font-family:Verdana;
+height:auto;
+border-bottom:1px dotted #ccc;
+width:100%;
+float:left;
+padding:35px 0;
+font-size:32px;
+font-weight:400;
+line-height:120%;
+}
+#blurb:hover {
+color:#e12000;
+}
+#content {
+width:700px;
+float:left;
+border-right:1px dotted #ccc;
+padding:0 20px 30px 0;
+min-height:420px;
+}
+.post {
+padding:0 30px 0 0;
+}
+p {
+margin:14px 0 14px 0;
+}
+em{
+font-style:italic;
+}
+h2 {
+font-family:Verdana;
+font-size:22px;
+margin:25px 0 15px 0;
+font-weight:bold;
+}
+h1, h1 a{
+font-family:Verdana;
+font-size:30px;
+margin:20px 0 20px 0;
+font-weight:bold;
+line-height:30px;
+}
+h3, h4 {
+font-family:Verdana;
+font-size:20px;
+margin:15px 0 5px 0;
+font-weight:normal;
+}
+h4 {
+font-size:18px;
+}
+.post .indent {
+padding-left:10px;
+}
+.post .indent p {
+padding-left:10px;
+}
+.post small {
+font-size:11px;
+}
+.post small a {
+font-weight:normal;
+}
+.post .alignright {
+float:right;
+margin-left:10px;
+}
+.post .alignleft {
+float:left;
+margin-right:10px;
+}
+.post .aligncenter {
+margin:0 auto;
+display:block;
+}
+.post abbr {
+font-weight:normal;
+}
+ul{
+list-style:circle;
+margin:0 0 0 25px;
+}
+ol{
+list-style:decimal;
+margin:0 0 0 30px;
+}
+.post .wp-caption {
+background:#f7f7f7;
+border:1px solid #ccc;
+margin:10px;
+text-align:center;
+padding:5px 0 0;
+}
+.post .wp-caption-text {
+margin:0;
+}
+.post .wp-caption a, .post .wp-caption a:hover {
+border-bottom:0;
+}
+blockquote {
+color:#777;
+border-left:5px solid #ccc;
+margin:15px 30px 0 10px;
+padding-left:20px;
+}
+.post pre {
+font-family:courier;
+font-size:12px;
+letter-spacing:-1px;
+margin:14px 0 14px 0;
+}
+.post .message ul {
+margin:12px 0 0;
+}
+.post .message {
+display:none;
+background:#0F67A1;
+margin-top:10px;
+padding:20px;
+color:#fff;
+}
+#comments h3, #comments h4{
+font-family:Verdana;
+font-size:24px;
+margin:35px 0 5px;
+font-weight:normal;
+}
+#comments h4{
+font-size:28px;
+}
+#comments cite{
+font-family:Verdana;
+font-size:18px;
+font-weight:normal;
+border-bottom:1px dotted #ccc;
+}
+#comments em {
+font-style:italic;
+text-align:right;
+}
+#comments ol.commentlist li {
+margin-top:20px;
+border:1px dotted #ccc;
+border-right:0;
+padding:10px 5px 20px 10px;
+min-height:110px;
+}
+#comments p {
+margin:10px 0 0 10px;
+width:auto;
+}
+#comments span {
+display:block;
+color:#eee;
+font-family:Verdana;
+font-size:120px;
+font-weight:normal;
+float:right;
+padding-top:25px;
+}
+#comments ul.formlist {
+margin:20px auto;
+width:375px;
+}
+#comments ul.formlist li {
+display:block;
+margin:10px 0 0;
+}
+#comments ul.formlist p{
+margin:10px 0 0;
+text-align:center;
+}
+#comments input {
+font-family:Verdana;
+width:370px;
+font-size:18px;
+font-weight:normal;
+}
+#comments textarea {
+font-family:Verdana;
+width:370px;
+font-size:18px;
+font-weight:normal;
+}
+#comments li.submitbutton input {
+text-align:center;
+background:#fff;
+border:1px solid #aaa;
+color:#000;
+font-family:Verdana;
+font-weight:normal;
+font-size:20px;
+width:374px;
+}
+#comments .center {
+text-align:center;
+}
+#sidebar {
+width:250px;
+float:right;
+margin:15px 0 25px 0;
+}
+#sidebar h3 {
+padding:5px 0 3px 0;
+font-size:18px;
+}
+#sidebar .block ul {
+border-bottom:1px dotted #ccc;
+margin:0 0 0 3px;
+}
+#sidebar .block ul .children{
+border:0;
+padding: 0 0 0 8px;
+}
+#sidebar .block li {
+border-top:1px dotted #ccc;
+list-style-type: none;
+}
+#sidebar .block li a {
+/*background:transparent url(images/bullet_black.gif) no-repeat scroll 6px 52%;*/
+font-size:14px;
+font-weight:normal;
+padding:5px 0 5px 0px;
+display:block;
+border-bottom:none;
+}
+#sidebar .block li a:hover {
+/*background:#f7f7f7 url(images/bullet_red.gif) no-repeat scroll 6px 52%;*/
+}
+#sidebar .acitem li {
+border-top:1px dotted #ccc;
+padding-left:10px;
+}
+#sidebar .noacitem li {
+border-top:1px dotted #ccc;
+margin-left:10px;
+}
+#sidebar .widget_search label {
+display:block;
+padding:25px 0 3px 0;
+font-size:18px;
+border-bottom:1px dotted #ccc;
+margin:0 0 5px;
+}
+#sidebar .widget_recent_comments li {
+background:transparent url(images/bullet_black.gif) no-repeat scroll 6px 52%;
+padding:2px 0 2px 15px;
+}
+#sidebar .widget_recent_comments li a,#sidebar .widget_recent_comments li a:hover{
+background:none;
+border-bottom:1px dotted #000;
+text-decoration:none;
+color:#000;
+font-weight:600;
+}
+#sidebar .widget_recent_comments li a:hover {
+color:#e12000;
+border-bottom:1px dashed #e12000;
+background-color:#f7f7f7;
+}
+#sidebar .widget_tag_cloud h3 {
+margin:0 0 8px;
+border-bottom:1px dotted #ccc;
+}
+#sidebar .widget_text h3 , #sidebar .calendar h3{
+border-bottom:1px dotted #ccc;
+}
+#sidebar .calendar h3{
+display:none;
+}
+#sidebar #wp-calendar {
+width:95%;
+text-align:center;
+}
+#sidebar #wp-calendar caption, #sidebar #wp-calendar td, #sidebar #wp-calendar th{
+text-align:center;
+}
+#sidebar #wp-calendar caption {
+font-size:18px;
+padding:25px 0 3px 0;
+}
+#sidebar #wp-calendar th {
+font-weight: bold; 
+border-top:1px dotted #ccc;
+border-bottom:1px dotted #ccc;
+}
+#sidebar #wp-calendar tfoot td{
+border-top:1px dotted #ccc;
+border-bottom:1px dotted #ccc;
+}
+#footer {
+width:1000px;
+float:left;
+border-top:1px dotted #cccccc;
+text-align:center;
+padding:30px 0 40px 0;
+}
+
+.hr {
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: #999;
+clear: both;
+}
