@@ -46,8 +46,8 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>3rd-party product integration (open-source)<a href="#" title="3rd-party open-source products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
-      <td>Drupal, Magento, Django, ColdFusion, Wordpress, OpenCMS, Plone, Typo3, ez Publish, DataStax Enterprise</td>
-      <td>Django</td>
+      <td>Drupal, Magento, Django, ColdFusion, Wordpress, OpenCMS, Plone, Typo3, ez Publish</td>
+      <td>Django, Riak (via Yokozuna)</td>
     </tr>
     <tr>
       <td>3rd-party product integration (commercial)<a href="#" title="3rd-party commercial products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
@@ -402,7 +402,7 @@ include_once("inc/header.php");
     </tr> 
     <tr>
       <td>Change # of shards</td>
-      <td><img src="img/tick.png"> specified at execution time, with command-line param -DnumShards=n</td>
+      <td><img src="img/cross.png"> specified at index-creation time, with command-line param -DnumShards=n. Cannot be changed once index is created.</td>
       <td><img src="img/cross.png"> each index has 5 shards by default. Number of primary shards cannot be changed once the index is created. Replicas can be increased anytime.</td>
     </tr> 
     <tr>
@@ -440,7 +440,13 @@ include_once("inc/header.php");
     </tbody>  
   </table> 
  
-
+  <br/><hr/>
+  <h2 class="secthead">Thoughts...</h2>
+  <p>As a number of folks point out in the discussion below, feature comparisons are inherently shallow and only go so far. I think they serve a purpose, but shouldn't be taken to be the last word on these 2 fantastic search products.</p>
+  <p>If you're running a smallish site and need search features without the distributed bells-and-whistles, I think you'll be very happy with either Solr or ElasticSearch. </p>
+  <p>The exception to this is if you need RIGHT NOW some very specific feature like multi-point spatial search or field grouping which is currently implemented in Solr and not ElasticSearch. Because of the considerable momentum behind ElasticSearch, it is very likely that the feature-set between the 2 products will converge considerably in the near future.</p>
+  <p>If you're planning a large installation that requires running distributed search instances, I suspect you're going to be happier with ElasticSearch. </p>
+  <p>As Matt Weber points out below, ElasticSearch was built to be distributed from the ground up, not tacked on as an 'afterthought' like it was with Solr. This is totally evident when examining the design and architecture of the 2 products, and also when browsing the source code.</p>
   
   <br/><hr/>
   <h2 class="secthead">Resources</h2>
