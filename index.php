@@ -46,8 +46,8 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>3rd-party product integration (open-source)<a href="#" title="3rd-party open-source products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
-      <td>Drupal, Magento, Django, ColdFusion, Wordpress, OpenCMS, Plone, Typo3, ez Publish</td>
-      <td>Django, Riak (via Yokozuna)</td>
+      <td>Drupal, Magento, Django, ColdFusion, Wordpress, OpenCMS, Plone, Typo3, ez Publish, Symfony2</td>
+      <td>Django, Riak (via Yokozuna), Symfony2</td>
     </tr>
     <tr>
       <td>3rd-party product integration (commercial)<a href="#" title="3rd-party commercial products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
