@@ -32,7 +32,7 @@ include_once("inc/header.php");
     <tr>
       <td>Binary API <a href="#" title="A binary API is likely to be a more efficient for large data." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"> SolrJ</td>
-      <td><img src="img/tick.png"> TransportClient</td>
+      <td><img src="img/tick.png"> TransportClient, Thrift (through a <a href="https://github.com/elasticsearch/elasticsearch-transport-thrift">plugin</a>)</td>
     </tr>
     <tr>
       <td>JMX support</td>
@@ -219,7 +219,7 @@ include_once("inc/header.php");
     <tr>
       <td>Spellcheck</td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/cross.png"> possibly 0.20+</td>
+      <td><img src="img/tick.png"> <a href="http://www.elasticsearch.org/guide/reference/api/search/suggest/">Suggest API</a></td>
     </tr>
     <tr>
       <td>Autocomplete</td>
@@ -233,7 +233,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Joins <a href="#" title="A method of searching on inter-document relationships, just like SQL joins." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"></td>
+      <td><img src="img/cross.png"> Its not supported in distributed search. See <a href="https://issues.apache.org/jira/browse/LUCENE-3759">LUCENE-3759</a>.</td>
       <td><img src="img/tick.png"> via <i>has_children</i> and <i>top_children</i> queries</td>
     </tr>  
     <tr>
@@ -258,7 +258,7 @@ include_once("inc/header.php");
     </tr> 
     <tr>
       <td>Search across multiple indexes</td>
-      <td><img src="img/cross.png"></td>
+      <td><img src="img/tick.png"> it can search across multiple compatible collections</td>
       <td><img src="img/tick.png"></td>
     </tr> 
     <tr>
@@ -274,7 +274,7 @@ include_once("inc/header.php");
     <tr>
       <td>Searcher warming on index reload <a href="#" title="When an index is changed, Searchers need to be reloaded. All existing FieldCaches are refreshed. By warming Searchers with queries before making them live, you avoid the instance where the first search is always a slow one." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/cross.png"> v0.20.0.RC1</td>
+      <td><img src="img/tick.png"> <a href="http://www.elasticsearch.org/guide/reference/api/admin-indices-warmers/">Warmers API</a></td>
     </tr>
     <!--       
     
@@ -381,13 +381,13 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"> internal Zen Discovery or ZooKeeper</td>
     </tr>
     <tr>
-      <td>No Split-Brain situations</td>
-      <td><img src="img/tick.png"> Comes with ZooKeeper</td>
-      <td><img src="img/cross.png"> See <a href="http://elasticsearch-users.115913.n3.nabble.com/Split-brain-td3620149.html">this</a></td>
+      <td>Partition tolerance</td>
+      <td><img src="img/tick.png"> The partition without a ZooKeeper quorum will stop accepting indexing requests or cluster state changes, while the partition with a quorum continues to function.</td>
+      <td><img src="img/cross.png"> Partitioned clusters can diverge unless discovery.zen.minimum_master_nodes set to at least N/2+1, where N is the size of the cluster.  If configured correctly, the partition without a quorum will stop operating, while the other continues to work. See <a href="http://elasticsearch-users.115913.n3.nabble.com/Split-brain-td3620149.html">this</a></td>
     </tr>
     <tr>
       <td>Automatic failover</td>
-      <td><img src="img/tick.png"></td>
+      <td><img src="img/tick.png"> If all nodes storing a shard and its replicas fail, client requests will fail, unless requests are made with the shards.tolerant=true parameter, in which case partial results are retuned from the available shards.</td>
       <td><img src="img/tick.png"></td>
     </tr>
     <tr>
@@ -408,11 +408,11 @@ include_once("inc/header.php");
     <tr>
       <td>Automatic shard rebalancing <a href="#" title="Shards are automatically rebalanced to adhere to the desired replication factor." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/cross.png"></td>
-      <td><img src="img/tick.png"></td>
+      <td><img src="img/tick.png"> it can be machine, rack, availability zone, and/or data center aware.  Arbitrary tags can be assigned to nodes and it can be configured to not assign the same shard and its replicates on a node with the same tags.</td>
     </tr> 
     <tr>
       <td>Change # of shards</td>
-      <td><img src="img/cross.png"> specified at index-creation time, with command-line param -DnumShards=n. Cannot be changed once index is created.</td>
+      <td><img src="img/cross.png"> specified at index-creation time, with command-line param -DnumShards=n. Cannot be changed once index is created. Shard splitting is a work in progress (<a href="https://issues.apache.org/jira/browse/SOLR-3755">SOLR-3755</a>). Additional replicas can be created.</td>
       <td><img src="img/cross.png"> each index has 5 shards by default. Number of primary shards cannot be changed once the index is created. Replicas can be increased anytime.</td>
     </tr> 
     <tr>
@@ -424,6 +424,11 @@ include_once("inc/header.php");
       <td>Control shard routing <a href="#" title="Control which shard a search request gets routed to" class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"> with some config changes</td>
       <td><img src="img/tick.png"> <i>routing</i> parameter</td>
+    </tr> 
+    <tr>
+      <td>Consistency</td>
+      <td>Indexing requests are synchronous with replication. A indexing request won't return until all replicas respond.  No check for downed replicas.  They will catch up when they recover. When new replicas are added, they won't start accepting and responding to requests until they are finished replicating the index.</td>
+      <td>Replication between nodes is synchronous by default, thus ES is consistent by default, but it can be set to asynchronous on a per document indexing basis. Index writes can be configured to fail is there are not sufficient active shard replicas.  The default is quorum, but all or one are also available.</td>
     </tr> 
     <!-- 
     <tr>
