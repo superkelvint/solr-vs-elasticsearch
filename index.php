@@ -184,7 +184,7 @@ include_once("inc/header.php");
     <tr>
       <td>Faceting <a href="#" title="Faceting allows for efficient computation of doc counts by facets. An example of facets may be 'Category', 'Price' or 'Shipping Method'." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/tick.png"></td>
+      <td><img src="img/tick.png">though facets return <a href="https://github.com/elasticsearch/elasticsearch/issues/1305">incorrect counts</a></td>
     </tr>
     <tr>
       <td>Pivot Facets <a href="#" title="A pivot facet, aka decision tree, is a multi-level facet across multiple fields. e.g. pivoting on price than category returns category facet counts for each price facet." class="tt"><img src="img/help.png"></a></td>
@@ -233,7 +233,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Joins <a href="#" title="A method of searching on inter-document relationships, just like SQL joins." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> Its not supported in distributed search. See <a href="https://issues.apache.org/jira/browse/LUCENE-3759">LUCENE-3759</a>.</td>
+      <td><img src="img/cross.png"> It's not supported in distributed search. See <a href="https://issues.apache.org/jira/browse/LUCENE-3759">LUCENE-3759</a>.</td>
       <td><img src="img/tick.png"> via <i>has_children</i> and <i>top_children</i> queries</td>
     </tr>  
     <tr>
