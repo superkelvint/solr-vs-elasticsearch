@@ -37,7 +37,7 @@ include_once("inc/header.php");
     <tr>
       <td>JMX support</td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/tick.png"></td>
+      <td><img src="img/cross.png"> ES specific stats are exposed through the REST API</td>
     </tr>
     <tr>
       <td>Client libraries <a href="#" title="Libraries for communicating with Solr in various languages." class="tt"><img src="img/help.png"></a></td>
