@@ -54,6 +54,11 @@ include_once("inc/header.php");
       <td>DataStax Enterprise Search</td>
       <td>SearchBlox</td>
     </tr>
+    <tr>
+      <td>Output<a href="#" title="Output formats" class="tt"><img src="img/help.png"></a></td>
+      <td>JSON, XML, PHP, Python, Ruby, CSV, Velocity, XSLT, native Java</td>
+      <td>JSON, XML/HTML (via <a href="http://blog.zenika.com/index.php?post/2012/12/20/Introducing-the-ElasticSearch-View-Plugin">plugin</a>)</td>
+    </tr>
     </tbody>
   </table>
   <br/>
@@ -114,6 +119,11 @@ include_once("inc/header.php");
       <td>Complex documents <a href="#" title="Parent-child relationship between documents is supported. You can nest documents, rather than having to flatten documents." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/cross.png"> Flat document structure. No native support for nesting documents</td>
       <td><img src="img/tick.png"></td>
+    </tr>
+    <tr>
+      <td>Schemaless <a href="#" title="A mode that requires no up-front schema modifications, in which previously unknown fields' types are guessed based on the values in added/updated documents, and are then added to the schema prior to processing the update." class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"> 4.4+</td>
+      <td><img src="img/tick.png"> </td>
     </tr>  
     <tr>
       <td>Multiple document types per schema <a href="#" title="The RDBMS-equivalent of a schema is a database. <br/>A database table is a collection of fields.<br/> Having multiple doc types per schema is akin to having multiple tables per database." class="tt"><img src="img/help.png"></a></td>
@@ -208,13 +218,13 @@ include_once("inc/header.php");
     </tr>        
     <tr>
       <td>Push Queries <a href="#" title="Think of push queries as the reverse operation of indexing and then searching. Instead of sending docs, indexing them, and then running queries. One sends queries, registers them, and then sends docs and finds out which queries match that doc." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"></td>
+      <td><img src="img/cross.png"><a href="https://issues.apache.org/jira/browse/SOLR-4587">JIRA issue</td>
       <td><img src="img/tick.png"> Percolation</td>
     </tr>
     <tr>
       <td>Field collapsing/Results grouping <a href="#" title="Field Collapsing collapses a group of results with the same field value down to a single (or fixed number) of entries. For example, most search engines such as Google collapse on site so only one or two entries are shown, along with a link to click to see more results from that site." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/cross.png"> possibly 0.20+</td>
+      <td><img src="img/cross.png"> possibly 1.0+ <a href="http://www.elasticsearch.com/blog/from-amsterdam-with-love-elasticsearchs-second-company-all-hands/">link</td>
     </tr>
     <tr>
       <td>Spellcheck</td>
@@ -224,12 +234,12 @@ include_once("inc/header.php");
     <tr>
       <td>Autocomplete</td>
       <td><img src="img/tick.png"></td>
-      <td>Beta implementation from community plugin</td>
+      <td>Added in 0.90.3 <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-suggesters-completion.html">here</a></td>
     </tr>
     <tr>
       <td>Query elevation  <a href="#" title="Query elevation enables you to configure the top results for a given query regardless of the normal lucene scoring. This is sometimes called 'sponsored search', 'editorial boosting' or 'best bets'." class="tt"><img src="img/help.png"></a> </td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/cross.png"></td>
+      <td><img src="img/tick.png"><a href="https://github.com/elasticsearch/elasticsearch/issues/1066#issuecomment-8625739">workaround</a></td>
     </tr>
     <tr>
       <td>Joins <a href="#" title="A method of searching on inter-document relationships, just like SQL joins." class="tt"><img src="img/help.png"></a></td>
