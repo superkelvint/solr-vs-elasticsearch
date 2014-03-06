@@ -79,6 +79,11 @@ include_once("inc/header.php");
       <td>ID field for updates and deduplication</td>
       <td><img src="img/tick.png"></td>
       <td><img src="img/tick.png"></td>
+    </tr>
+		<tr>
+      <td>DocValues <a href="#" title="Disk-based field data. Replacement for FieldCache" class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"></td>
+      <td><img src="img/tick.png"></td>
     </tr>  
     <tr>
       <td>Partial Doc Updates <a href="#" title="Partial document updates allow you to update a document by sending just the fields that have changed. <p>This makes it more similar to SQL update statements.</p>" class="tt"><img src="img/help.png"></a></td>
@@ -197,6 +202,11 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"> The way top N facets work now is by getting the top N from each shard, and merging the results. This can give <a href="https://github.com/elasticsearch/elasticsearch/issues/1305">incorrect counts</a> when num shards &gt; 1.</td>
     </tr>
     <tr>
+      <td>Advanced Faceting <a href="#" title="Advanced operations such as metrics and bucketing" class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/cross.png"></td>
+      <td><img src="img/tick.png"> <a href="http://www.elasticsearch.org/blog/data-visualization-elasticsearch-aggregations" rel="nofollow">blog post</a></td>
+    </tr>
+    <tr>
       <td>Pivot Facets <a href="#" title="A pivot facet, aka decision tree, is a multi-level facet across multiple fields. e.g. pivoting on price than category returns category facet counts for each price facet." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
       <td><img src="img/cross.png"></td>
@@ -219,7 +229,7 @@ include_once("inc/header.php");
     <tr>
       <td>Push Queries <a href="#" title="Think of push queries as the reverse operation of indexing and then searching. Instead of sending docs, indexing them, and then running queries. One sends queries, registers them, and then sends docs and finds out which queries match that doc." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/cross.png"><a href="https://issues.apache.org/jira/browse/SOLR-4587">JIRA issue</td>
-      <td><img src="img/tick.png"> Percolation</td>
+      <td><img src="img/tick.png"> Percolation. Distributed percolation supported in 1.0</td>
     </tr>
     <tr>
       <td>Field collapsing/Results grouping <a href="#" title="Field Collapsing collapses a group of results with the same field value down to a single (or fixed number) of entries. For example, most search engines such as Google collapse on site so only one or two entries are shown, along with a link to click to see more results from that site." class="tt"><img src="img/help.png"></a></td>
@@ -356,12 +366,19 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"></td>
       <td><img src="img/cross.png"></td>
     </tr> 
-    <!--
+    
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>  
+      <td>Pluggable webapps <a href="#" title="Webapps integrated with the application" class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/cross.png"></td>
+      <td><img src="img/tick.png"> site plugin</td>
+    </tr>
+    
+     <tr>
+      <td>Automated plugin installation <a href="#" title="Can plugins be installed via some kind of manager?" class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/cross.png"></td>
+      <td><img src="img/tick.png"> Installable from GitHub, maven, sonatype or elasticsearch.org</td>
+    </tr>            
+    <!--
     <tr>
       <td></td>
       <td></td>
@@ -461,16 +478,40 @@ include_once("inc/header.php");
       <td></td>
       <td></td>
     </tr>
-    -->
+    -->    
+        </tbody>  
+  </table>
+
+  <br/>
+  <h2 class="secthead">Misc</h2>
+  <table class="table table-striped table-bordered table-hover">
+    <thead><tr>
+    <th width="20%">Feature</th>
+    <th width="40%"><?=$solr_version;?></th>
+    <th width="40%"><?=$es_version;?></th></tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Web Admin interface </td>
+      <td><img src="img/tick.png"> bundled with Solr</td>
+      <td><img src="img/tick.png"> <a href="https://github.com/mobz/elasticsearch-head‎">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf">kopf</a></td>
+    </tr>
+
+    <tr>
+      <td>Hosting providers </td>
+      <td><a href="http://www.websolr.com" rel="nofollow">WebSolr</a>, <a href="http://www.seachify.com" rel="nofollow">Searchify</a>, <a href="http://www.hosted-solr.com" rel="nofollow">Hosted-Solr</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a>, <a href="http://www.opensolr.com" rel="nofollow">OpenSolr</a></td>
+      <td><a href="http://www.bonsai.io" rel="nofollow">bonsai.io</a>, <a href="http://www.indexisto.com" rel="nofollow">Indexisto</a>, <a href="http://www.qbox.io" rel="nofollow">qbox.io</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a></td>
+    </tr>
+
+
     </tbody>  
   </table> 
  
   <br/><hr/>
   <h2 class="secthead">Thoughts...</h2>
   <p>As a number of folks point out in the discussion below, feature comparisons are inherently shallow and only go so far. I think they serve a purpose, but shouldn't be taken to be the last word on these 2 fantastic search products.</p>
-  <p>If you're running a smallish site and need search features without the distributed bells-and-whistles, I think you'll be very happy with either Solr or ElasticSearch. </p>
-  <p>The exception to this is if you need RIGHT NOW some very specific feature like field grouping which is currently implemented in Solr and not ElasticSearch. Because of the considerable momentum behind ElasticSearch, it is very likely that the feature-set between the 2 products will converge considerably in the near future.</p>
-  <p>If you're planning a large installation that requires running distributed search instances, I suspect you're going to be happier with ElasticSearch. </p>
+  <p>If you're running a smallish site and need search features without fancy bells-and-whistles, I think you'll be very happy with either Solr or ElasticSearch. </p>
+  <p>I've found ElasticSearch to be friendlier to teams which are used to REST APIs, JSON etc and don't have a Java background. If you're planning a large installation that requires running distributed search instances, I suspect you're also going to be happier with ElasticSearch. </p>
   <p>As Matt Weber points out below, ElasticSearch was built to be distributed from the ground up, not tacked on as an 'afterthought' like it was with Solr. This is totally evident when examining the design and architecture of the 2 products, and also when browsing the source code.</p>
   
   <br/><hr/>
