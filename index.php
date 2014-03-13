@@ -503,6 +503,11 @@ include_once("inc/header.php");
       <td><a href="http://www.bonsai.io" rel="nofollow">bonsai.io</a>, <a href="http://www.indexisto.com" rel="nofollow">Indexisto</a>, <a href="http://www.qbox.io" rel="nofollow">qbox.io</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a></td>
     </tr>
 
+	<tr>
+      <td>Visualization</td>
+      <td><a href="https://github.com/LucidWorks/banana" rel="nofollow">Banana ( Port of Kibana )</a></td>
+      <td><a href="http://demo.kibana.org" rel="nofollow">Kibana</a></td>
+    </tr>
 
     </tbody>  
   </table> 
