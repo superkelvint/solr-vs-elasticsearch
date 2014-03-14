@@ -122,7 +122,7 @@ include_once("inc/header.php");
     </tr>  
     <tr>
       <td>Complex documents <a href="#" title="Parent-child relationship between documents is supported. You can nest documents, rather than having to flatten documents." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> Flat document structure. No native support for nesting documents</td>
+      <td><img src="img/tick.png"> From version 4.5 See Block Join Query Parsers and Schema.xml for nesting documents</td>
       <td><img src="img/tick.png"></td>
     </tr>
     <tr>
