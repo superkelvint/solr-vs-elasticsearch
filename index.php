@@ -51,7 +51,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>3rd-party product integration (commercial)<a href="#" title="3rd-party commercial products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
-      <td>DataStax Enterprise Search</td>
+      <td>DataStax Enterprise Search, LucidWorks</td>
       <td>SearchBlox</td>
     </tr>
     <tr>
@@ -122,8 +122,8 @@ include_once("inc/header.php");
     </tr>  
     <tr>
       <td>Complex documents <a href="#" title="Parent-child relationship between documents is supported. You can nest documents, rather than having to flatten documents." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> Flat document structure. No native support for nesting documents</td>
-      <td><img src="img/tick.png"></td>
+      <td><img src="img/tick.png"> One level only parent/child supported (see <a href="https://cwiki.apache.org/confluence/display/solr/Other+Parsers#OtherParsers-BlockJoinQueryParsers">refguide</a>)</td>
+      <td><img src="img/tick.png"> Multi level nesting supported</td>
     </tr>
     <tr>
       <td>Schemaless <a href="#" title="A mode that requires no up-front schema modifications, in which previously unknown fields' types are guessed based on the values in added/updated documents, and are then added to the schema prior to processing the update." class="tt"><img src="img/help.png"></a></td>
@@ -137,7 +137,7 @@ include_once("inc/header.php");
     </tr>  
     <tr>
       <td>Online schema changes <a href="#" title="Can changes to the schema be made without restarting the server?" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> Schema change requires restart. Workaround possible using MultiCore.</td>
+      <td><img src="img/tick.png"> Since 4.4 (<a href="https://cwiki.apache.org/confluence/display/solr/Schema+API">managed schema mode</a>). Only backward-compatible changes.</td>
       <td><img src="img/tick.png"> Only backward-compatible changes.</td>
     </tr>  
     <tr>
@@ -178,12 +178,12 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Structured Query DSL <a href="#" title="A Domain-Specific Language which allows you to build complex queries not otherwise possible with just a Lucene query string." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> Need to programmatically create queries if going beyond Lucene query syntax.</td>
+      <td><img src="img/cross.png"> Need to programmatically create queries if going beyond Lucene query syntax. (JSON DSL planned in <a href="https://issues.apache.org/jira/browse/SOLR-4351">SOLR-4351</a>)</td>
       <td><img src="img/tick.png"></td>
     </tr> 
     <tr>
       <td>Span queries <a href="#" title="SpanQueries allow for nested, positional restrictions when matching documents in Lucene. They're kind of like phrase queries, but much more expressive." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> via <a href="https://issues.apache.org/jira/browse/SOLR-2703">SOLR-2703</a></td>
+      <td><img src="img/tick.png"></td>
       <td><img src="img/tick.png"></td>
     </tr>    
     <tr>
@@ -228,7 +228,7 @@ include_once("inc/header.php");
     </tr>        
     <tr>
       <td>Push Queries <a href="#" title="Think of push queries as the reverse operation of indexing and then searching. Instead of sending docs, indexing them, and then running queries. One sends queries, registers them, and then sends docs and finds out which queries match that doc." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"><a href="https://issues.apache.org/jira/browse/SOLR-4587">JIRA issue</td>
+      <td><img src="img/cross.png"><a href="https://issues.apache.org/jira/browse/SOLR-4587">JIRA issue</a></td>
       <td><img src="img/tick.png"> Percolation. Distributed percolation supported in 1.0</td>
     </tr>
     <tr>
@@ -253,7 +253,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Joins <a href="#" title="A method of searching on inter-document relationships, just like SQL joins." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> It's not supported in distributed search. See <a href="https://issues.apache.org/jira/browse/LUCENE-3759">LUCENE-3759</a>.</td>
+      <td><img src="img/tick.png"> via block join since 4.5, or via QueryJoin using SolrCloud's CompositeId router to make sure related documents are indexed in same shard (see <a href="http://lucene.472066.n3.nabble.com/Joins-with-SolrCloud-td4073199.html">mail thread</a>).</td>
       <td><img src="img/tick.png"> via <i>has_children</i> and <i>top_children</i> queries</td>
     </tr>  
     <tr>
@@ -268,7 +268,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Alternative QueryParsers <a href="#" title="An example of an alternative QueryParser is Solr's DisjunctionMaxQueryParser." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> DisMax, eDisMax</td>
+      <td><img src="img/tick.png"> DisMax, eDisMax, MaxScore, boost, frange, raw, term, surround, collapsing, join, nested, collapsing, parent, child, switch, simple, geofilt as well as some 3rd party: synonym_edismax, xml, json, complexphrase, antlrqueryparser (<a href="https://cwiki.apache.org/confluence/display/solr/Other+Parsers">official list in refguide</a>)</td>
       <td><img src="img/tick.png"> query_string, dis_max, match, multi_match etc</td>
     </tr>
     <tr>
@@ -439,12 +439,12 @@ include_once("inc/header.php");
     </tr> 
     <tr>
       <td>Change # of shards</td>
-      <td><img src="img/cross.png"> specified at index-creation time, with command-line param -DnumShards=n. Can be increased by splitting an existing shard (<a href="https://issues.apache.org/jira/browse/SOLR-3755">SOLR-3755</a>). Cannot be lowered.  Additional replicas can be created.</td>
+      <td><img src="img/tick.png"> since 4.3: Two methods: 1) Shard splitting API (<a href="https://cwiki.apache.org/confluence/display/solr/Collections+API#CollectionsAPI-SplitaShard">doc</a>) to increase #shards, or 2) CREATESHARD API (<a href="https://cwiki.apache.org/confluence/display/solr/Collections+API#CollectionsAPI-CreateaShard">doc</a>) if using implicit document routing.</td>
       <td><img src="img/cross.png"> each index has 5 shards by default. Number of primary shards cannot be changed once the index is created. Replicas can be increased anytime.</td>
     </tr> 
     <tr>
       <td>Relocate shards and replicas <a href="#" title="Move shards and replicas within a cluster" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> can be done by creating a shard replicate on the desired node and then removing the shard from the source node</td>
+      <td><img src="img/tick.png"> can be done by creating a shard replicate on the desired node and then removing the shard from the source node</td>
       <td><img src="img/tick.png"> can move shards and replicas to any node in the cluster on demand</td>
     </tr>  
     <tr>
