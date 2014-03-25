@@ -438,13 +438,18 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"> it can be machine, rack, availability zone, and/or data center aware.  Arbitrary tags can be assigned to nodes and it can be configured to not assign the same shard and its replicates on a node with the same tags.</td>
     </tr> 
     <tr>
-      <td>Change # of shards</td>
-      <td><img src="img/tick.png"> since 4.3: Two methods: 1) Shard splitting API (<a href="https://cwiki.apache.org/confluence/display/solr/Collections+API#CollectionsAPI-SplitaShard">doc</a>) to increase #shards, or 2) CREATESHARD API (<a href="https://cwiki.apache.org/confluence/display/solr/Collections+API#CollectionsAPI-CreateaShard">doc</a>) if using implicit document routing.</td>
+      <td>Increase # of shards</td>
+      <td><img src="img/tick.png"> since 4.3: Two methods: 1) Shard splitting API (<a href="https://cwiki.apache.org/confluence/display/solr/Collections+API#CollectionsAPI-SplitaShard">doc</a>) to increase #shards, or 2) CREATESHARD API (<a href="https://cwiki.apache.org/confluence/display/solr/Collections+API#CollectionsAPI-CreateaShard">doc</a>) if using implicit document routing. Replicas can be increased anytime.</td>
       <td><img src="img/cross.png"> each index has 5 shards by default. Number of primary shards cannot be changed once the index is created. Replicas can be increased anytime.</td>
     </tr> 
     <tr>
+      <td>Decrease # of shards</td>
+      <td><img src="img/cross.png"> No API support. However, oversharding lets you move multiple shards onto the same physical server.</td>
+      <td><img src="img/cross.png"> No API support. However, oversharding lets you move multiple shards onto the same physical server.</td>
+    </tr> 
+    <tr>
       <td>Relocate shards and replicas <a href="#" title="Move shards and replicas within a cluster" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> can be done by creating a shard replicate on the desired node and then removing the shard from the source node</td>
+      <td><img src="img/cross.png"> No dedicated API. Can be done by creating a shard replicate on the desired node and then removing the shard from the source node</td>
       <td><img src="img/tick.png"> can move shards and replicas to any node in the cluster on demand</td>
     </tr>  
     <tr>
