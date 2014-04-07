@@ -439,17 +439,17 @@ include_once("inc/header.php");
     </tr> 
     <tr>
       <td>Change # of shards</td>
-      <td><img src="img/cross.png"> specified at index-creation time, with command-line param -DnumShards=n. Can be increased by splitting an existing shard (<a href="https://issues.apache.org/jira/browse/SOLR-3755">SOLR-3755</a>). Cannot be lowered.  Additional replicas can be created.</td>
+      <td><img src="img/tick.png"> Shards can be added (when using implicit routing) or split (when using compositeId).  Cannot be lowered.  Replicas can be increased anytime.</td>
       <td><img src="img/cross.png"> each index has 5 shards by default. Number of primary shards cannot be changed once the index is created. Replicas can be increased anytime.</td>
     </tr> 
     <tr>
       <td>Relocate shards and replicas <a href="#" title="Move shards and replicas within a cluster" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> can be done by creating a shard replicate on the desired node and then removing the shard from the source node</td>
+      <td><img src="img/tick.png"> can be done by creating a shard replicate on the desired node and then removing the shard from the source node</td>
       <td><img src="img/tick.png"> can move shards and replicas to any node in the cluster on demand</td>
     </tr>  
     <tr>
       <td>Control shard routing <a href="#" title="Control which shard a search request gets routed to" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> with some config changes</td>
+      <td><img src="img/tick.png"> <i>shards</i> or <i>_route_</i> parameter</td>
       <td><img src="img/tick.png"> <i>routing</i> parameter</td>
     </tr> 
     <tr>
