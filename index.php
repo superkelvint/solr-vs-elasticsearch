@@ -51,8 +51,8 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>3rd-party product integration (commercial)<a href="#" title="3rd-party commercial products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
-      <td>DataStax Enterprise Search</td>
-      <td>SearchBlox</td>
+      <td>DataStax Enterprise Search, Cloudera Search, Hortonworks Data Platform, MapR</td>
+      <td>SearchBlox, Hortonworks Data Platform, MapR</td>
     </tr>
     <tr>
       <td>Output<a href="#" title="Output formats" class="tt"><img src="img/help.png"></a></td>
@@ -72,7 +72,7 @@ include_once("inc/header.php");
     <tbody> 
     <tr>
       <td>Data Import</td>
-      <td>DataImportHandler - MySQL, CSV, XML, Tika, URL, Flat File</td>
+      <td>DataImportHandler - JDBC, CSV, XML, Tika, URL, Flat File</td>
       <td>Rivers modules - Wikipedia, MongoDB, CouchDB, RabbitMQ, RSS, Sofa, JDBC, FileSystem, Dropbox, ActiveMQ, LDAP, Amazon SQS, St9, OAI, Twitter</td>
     </tr>
     <tr>
