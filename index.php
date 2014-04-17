@@ -73,7 +73,7 @@ include_once("inc/header.php");
     <tr>
       <td>Data Import</td>
       <td>DataImportHandler - JDBC, CSV, XML, Tika, URL, Flat File</td>
-      <td>Rivers modules - Wikipedia, MongoDB, CouchDB, RabbitMQ, RSS, Sofa, JDBC, FileSystem, Dropbox, ActiveMQ, LDAP, Amazon SQS, St9, OAI, Twitter</td>
+      <td>Rivers modules - ActiveMQ, Amazon SQS, CouchDB, Dropbox, DynamoDB, FileSystem, Git, GitHub, Hazelcast, JDBC, JMS, Kafka, LDAP, MongoDB, neo4j, OAI, RabbitMQ, Redis, RSS, Sofa, Solr, St9, Subversion, Twitter, Wikipedia</td>
     </tr>
     <tr>
       <td>ID field for updates and deduplication</td>
@@ -494,7 +494,7 @@ include_once("inc/header.php");
     <tr>
       <td>Web Admin interface </td>
       <td><img src="img/tick.png"> bundled with Solr</td>
-      <td><img src="img/tick.png"> <a href="https://github.com/mobz/elasticsearch-head‎">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf">kopf</a></td>
+      <td><img src="img/tick.png"> <a href="https://github.com/mobz/elasticsearch-head‎" rel="nofollow">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf" rel="nofollow">kopf</a>, <a href="https://github.com/royrusso/elasticsearch-HQ" rel="nofollow"">elasticsearch-HQ</a>, <a href="https://github.com/andrewvc/elastic-hammer" rel="nofollow">Hammer</a></td>
     </tr>
 
     <tr>
