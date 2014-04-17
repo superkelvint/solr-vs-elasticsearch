@@ -244,7 +244,7 @@ include_once("inc/header.php");
     <tr>
       <td>Autocomplete</td>
       <td><img src="img/tick.png"></td>
-      <td>Added in 0.90.3 <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-suggesters-completion.html">here</a></td>
+      <td><img src="img/tick.png"> Added in 0.90.3 <a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-suggesters-completion.html">here</a></td>
     </tr>
     <tr>
       <td>Query elevation  <a href="#" title="Query elevation enables you to configure the top results for a given query regardless of the normal lucene scoring. This is sometimes called 'sponsored search', 'editorial boosting' or 'best bets'." class="tt"><img src="img/help.png"></a> </td>
@@ -494,7 +494,7 @@ include_once("inc/header.php");
     <tr>
       <td>Web Admin interface </td>
       <td><img src="img/tick.png"> bundled with Solr</td>
-      <td><img src="img/tick.png"> <a href="https://github.com/mobz/elasticsearch-head‎" rel="nofollow">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf" rel="nofollow">kopf</a>, <a href="https://github.com/royrusso/elasticsearch-HQ" rel="nofollow"">elasticsearch-HQ</a>, <a href="https://github.com/andrewvc/elastic-hammer" rel="nofollow">Hammer</a></td>
+      <td><img src="img/tick.png"> via site plugins: <a href="https://github.com/mobz/elasticsearch-head‎" rel="nofollow">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf" rel="nofollow">kopf</a>, <a href="https://github.com/royrusso/elasticsearch-HQ" rel="nofollow"">elasticsearch-HQ</a>, <a href="https://github.com/andrewvc/elastic-hammer" rel="nofollow">Hammer</a></td>
     </tr>
 
     <tr>
