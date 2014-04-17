@@ -45,12 +45,12 @@ include_once("inc/header.php");
       <td>PHP, Ruby, Perl, Scala, Python, .NET, Javascript, Erlang, Clojure</td>
     </tr>
     <tr>
-      <td>3rd-party product integration (open-source)<a href="#" title="3rd-party open-source products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
+      <td>3rd-party product integration (open-source)<a href="#" title="3rd-party open-source products which use Solr/ES to provide search functionality." class="tt"><img src="img/help.png"></a></td>
       <td>Drupal, Magento, Django, ColdFusion, Wordpress, OpenCMS, Plone, Typo3, ez Publish, Symfony2, Riak (via Yokozuna)</td>
-      <td>Drupal, Django, Symfony2, Wordpress</td>
+      <td>Drupal, Django, Symfony2, Wordpress, CouchBase</td>
     </tr>
     <tr>
-      <td>3rd-party product integration (commercial)<a href="#" title="3rd-party commercial products which use Solr to provide search functionality." class="tt"><img src="img/help.png"></a></td>
+      <td>3rd-party product integration (commercial)<a href="#" title="3rd-party commercial products which use Solr/ES to provide search functionality." class="tt"><img src="img/help.png"></a></td>
       <td>DataStax Enterprise Search, Cloudera Search, Hortonworks Data Platform, MapR</td>
       <td>SearchBlox, Hortonworks Data Platform, MapR</td>
     </tr>
