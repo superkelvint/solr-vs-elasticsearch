@@ -257,6 +257,11 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"> via <i>has_children</i> and <i>top_children</i> queries</td>
     </tr>  
     <tr>
+      <td>Resultset Scrolling <a href="#" title="Efficient scrolling/paging of large result sets" class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/cross.png"> Supported in  <a href="http://heliosearch.org/solr/paging-and-deep-paging/">HeliosSearch</a>.</td>
+      <td><img src="img/tick.png"> via <i>scan</i> search type</td>
+    </tr>  
+    <tr>
       <td>Filter queries <a href="#" title="Cached queries which only limit the set of document results and do not affect doc score." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
       <td><img src="img/tick.png"> also supports filtering by native scripts</td>
