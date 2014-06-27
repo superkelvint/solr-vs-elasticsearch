@@ -122,7 +122,7 @@ include_once("inc/header.php");
     </tr>  
     <tr>
       <td>Complex documents <a href="#" title="Parent-child relationship between documents is supported. You can nest documents, rather than having to flatten documents." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> Flat document structure. No native support for nesting documents</td>
+      <td><img src="img/tick.png"> From version 4.5 See Block Join Query Parsers and Schema.xml for nesting documents</td>
       <td><img src="img/tick.png"></td>
     </tr>
     <tr>
@@ -508,6 +508,11 @@ include_once("inc/header.php");
       <td><a href="http://www.bonsai.io" rel="nofollow">bonsai.io</a>, <a href="http://www.indexisto.com" rel="nofollow">Indexisto</a>, <a href="http://www.qbox.io" rel="nofollow">qbox.io</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a></td>
     </tr>
 
+	<tr>
+      <td>Visualization</td>
+      <td><a href="https://github.com/LucidWorks/banana" rel="nofollow">Banana ( Port of Kibana )</a></td>
+      <td><a href="http://demo.kibana.org" rel="nofollow">Kibana</a></td>
+    </tr>
 
     </tbody>  
   </table> 
