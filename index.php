@@ -41,8 +41,8 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Client libraries <a href="#" title="Libraries for communicating with Solr in various languages." class="tt"><img src="img/help.png"></a></td>
-      <td>PHP, Ruby, Perl, Scala, Python, .NET, Javascript</td>
-      <td>PHP, Ruby, Perl, Scala, Python, .NET, Javascript, Erlang, Clojure</td>
+      <td>PHP, Ruby, Perl, Scala, Python, .NET, Java, Go, Javascript, Erlang, Clojure</td>
+      <td>PHP, Ruby, Perl, Scala, Python, .NET, Java, Go, Javascript, Erlang, Clojure</td>
     </tr>
     <tr>
       <td>3rd-party product integration (open-source)<a href="#" title="3rd-party open-source products which use Solr/ES to provide search functionality." class="tt"><img src="img/help.png"></a></td>
