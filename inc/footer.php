@@ -55,10 +55,10 @@
   })();
 
 </script>
-<script type="text/javascript" src="http://www.assoc-amazon.com/s/link-enhancer?tag=readingrex-20&&o=1">
+<script type="text/javascript" src="http://www.assoc-amazon.com/s/link-enhancer?tag=adamantite-20&&o=1">
 </script>
 <noscript>
-    <img src="http://www.assoc-amazon.com/s/noscript?tag=readingrex-20" alt="" />
+    <img src="http://www.assoc-amazon.com/s/noscript?tag=adamantite-20" alt="" />
 </noscript>
 
 </body>
