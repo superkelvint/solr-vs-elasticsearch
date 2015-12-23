@@ -46,7 +46,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Community client libraries <a href="#" title="Community-maintained client libraries in various languages." class="tt"><img src="img/help.png"></a></td>
-      <td>PHP, Ruby, Perl, Scala, Python, .NET, Javascript</td>
+      <td>PHP, Ruby, Perl, Scala, Python, .NET, Javascript, Go, Erlang, Clojure</td>
       <td>Clojure, Cold Fusion, Erlang, Go, Groovy, Haskell, Java, JavaScript, .NET, OCaml, Perl, PHP, Python, R, Ruby, Scala, Smalltalk, Vert.x <a href="https://www.elastic.co/guide/en/elasticsearch/client/community/current/index.html">Complete list</a></td>
     </tr>
     <tr>
