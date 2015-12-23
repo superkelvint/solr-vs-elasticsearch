@@ -547,7 +547,11 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"> bundled with Solr</td>
       <td><img src="img/tick.png"> Marvel and via site plugins: <a href="https://github.com/mobz/elasticsearch-head‎" rel="nofollow">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf" rel="nofollow">kopf</a>, <a href="https://github.com/royrusso/elasticsearch-HQ" rel="nofollow">elasticsearch-HQ</a>, <a href="https://github.com/andrewvc/elastic-hammer" rel="nofollow">Hammer</a></td>
     </tr>
-
+    <tr>
+      <td>Visualisation</td>
+      <td><a href="https://github.com/LucidWorks/banana" rel="nofollow">Banana (Port of Kibana)</a></td>
+      <td><a href="https://www.elastic.co/products/kibana" rel="nofollow">Kibana</a></td>
+    </tr>
     <tr>
       <td>Hosting providers </td>
       <td><a href="http://www.websolr.com" rel="nofollow">WebSolr</a>, <a href="http://www.seachify.com" rel="nofollow">Searchify</a>, <a href="http://www.hosted-solr.com" rel="nofollow">Hosted-Solr</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a>, <a href="http://www.opensolr.com" rel="nofollow">OpenSolr</a>, <a href="http://www.gotosolr.com" rel="nofollow">gotosolr</a></td>
