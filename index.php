@@ -554,7 +554,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Hosting providers </td>
-      <td><a href="http://www.websolr.com" rel="nofollow">WebSolr</a>, <a href="http://www.seachify.com" rel="nofollow">Searchify</a>, <a href="http://www.hosted-solr.com" rel="nofollow">Hosted-Solr</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a>, <a href="http://www.opensolr.com" rel="nofollow">OpenSolr</a>, <a href="http://www.gotosolr.com" rel="nofollow">gotosolr</a></td>
+      <td><a href="http://www.websolr.com" rel="nofollow">WebSolr</a>, <a href="http://www.searchify.com" rel="nofollow">Searchify</a>, <a href="http://www.hosted-solr.com" rel="nofollow">Hosted-Solr</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a>, <a href="http://www.opensolr.com" rel="nofollow">OpenSolr</a>, <a href="http://www.gotosolr.com" rel="nofollow">gotosolr</a></td>
       <td><a href="https://www.elastic.co/found" rel="nofollow">Found</a>, <a href="http://objectrocket.com/elasticsearch/" rel="nofollow">ObjectRocket</a>, <a href="http://www.bonsai.io" rel="nofollow">bonsai.io</a>, <a href="http://www.indexisto.com" rel="nofollow">Indexisto</a>, <a href="http://www.qbox.io" rel="nofollow">qbox.io</a>, <a href="http://www.indexdepot.com" rel="nofollow">IndexDepot</a>, <a href="http://www.compose.io" rel="nofollow">Compose.io</a></td>
     </tr>
 
