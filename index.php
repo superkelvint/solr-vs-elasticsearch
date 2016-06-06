@@ -501,7 +501,7 @@ include_once("inc/header.php");
     <tr>
       <td>Pluggable shard/replica assignment </td>
       <td><img src="img/tick.png"> <a href="https://cwiki.apache.org/confluence/display/solr/Rule-based+Replica+Placement">Rule-based replica assignment</a></td>
-      <td><img src="img/cross.png"> Partially-supported with <a href="https://github.com/datarank/tempest">Tempest plugin</a></td>
+      <td><img src="img/tick.png"> Probabilistic shard balancing with <a href="https://github.com/datarank/tempest">Tempest plugin</a></td>
     </tr> 
     <tr>
       <td>Consistency</td>
