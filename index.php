@@ -585,7 +585,7 @@ And once you do have to do config, then I personally prefer Solr's config system
 <br/>
 7. Overall from working with clients as a Solr/Elasticsearch consultant, I've found that developer preferences tend to end up along language party lines: if you're a Java/c# developer, you'll be pretty happy with Solr. If you live in Javascript or Ruby, you'll probably love Elasticsearch. If you're on Python or PHP, you'll probably be fine with either.  <br/>
 <br/>
-Something to add about this: ES doesn't have a very elegant Java API IMHO (you'll basically end up using REST because it's less painful), whereas Solrj is very satisfactory and more efficient than Solr's REST API. If you're primarily a Java dev team, do take this into consideration for your sanity. There's no scenario in which constructing JSON in Java is fun/simple, whereas in Python its absolutely pain-free, and believe me, if you have a non-triviable app, your ES json query strings will be works of art. <br/>
+Something to add about this: ES doesn't have a very elegant Java API IMHO (you'll basically end up using REST because it's less painful), whereas Solrj is very satisfactory and more efficient than Solr's REST API. If you're primarily a Java dev team, do take this into consideration for your sanity. There's no scenario in which constructing JSON in Java is fun/simple, whereas in Python its absolutely pain-free, and believe me, if you have a non-trivial app, your ES json query strings will be works of art. <br/>
 <br/>
 8.  ES doesn't have in-built support for pluggable 'SearchComponents', to use Solr's terminology. SearchComponents are (for me) a pretty indispensable part of Solr for anyone who needs to do anything customized and in-depth with search queries. <br/>
 <br/>
