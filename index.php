@@ -545,7 +545,7 @@ include_once("inc/header.php");
     <tr>
       <td>Web Admin interface </td>
       <td><img src="img/tick.png"> bundled with Solr</td>
-      <td><img src="img/tick.png"> Marvel and via site plugins: <a href="https://github.com/mobz/elasticsearch-head‎" rel="nofollow">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf" rel="nofollow">kopf</a>, <a href="https://github.com/royrusso/elasticsearch-HQ" rel="nofollow">elasticsearch-HQ</a>, <a href="https://github.com/andrewvc/elastic-hammer" rel="nofollow">Hammer</a></td>
+      <td><img src="img/tick.png"> Marvel and via site plugins: <a href="https://github.com/mobz/elasticsearch-head" rel="nofollow">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf" rel="nofollow">kopf</a>, <a href="https://github.com/royrusso/elasticsearch-HQ" rel="nofollow">elasticsearch-HQ</a>, <a href="https://github.com/andrewvc/elastic-hammer" rel="nofollow">Hammer</a></td>
     </tr>
     <tr>
       <td>Visualisation</td>
