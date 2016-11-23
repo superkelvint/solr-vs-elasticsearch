@@ -132,9 +132,14 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"></td>
     </tr>  
     <tr>
-      <td>Synonyms <a href="#" title="You can specify synonyms at index- or query-time, either through term expansion, or term substitution." class="tt"><img src="img/help.png"></a></td>
+      <td>Index-time synonyms <a href="#" title="You can specify synonyms either through term expansion, or term substitution." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
       <td><img src="img/tick.png"> Supports Solr and Wordnet synonym format</td>
+    </tr>  
+    <tr>
+      <td>Query-time synonyms <a href="#" title="You can specify synonyms either through term expansion, or term substitution." class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"> especially via <a href="https://github.com/healthonnet/hon-lucene-synonyms">hon-lucene-synonyms</a></td>
+      <td><img src="img/cross.png"> Technically, yes, but practically no because multi-word/phrase query-time synonyms are not supported. See <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/multi-word-synonyms.html">ES docs</a> and <a href="https://nolanlawson.com/2012/10/31/better-synonym-handling-in-solr/">hon-lucene-synonyms</a> blog for nuances.</td>
     </tr>  
     <tr>
       <td>Multiple indexes <a href="#" title="Lucene stores documents in an index. This feature allows you to manage multiple indices from a single installation. The RDBMS-equivalent of an index is a database." class="tt"><img src="img/help.png"></a></td>
@@ -229,7 +234,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Advanced Faceting <a href="#" title="Advanced operations such as hierarchical faceting, metrics and bucketing" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> <a href="http://yonik.com/json-facet-api/">New JSON faceting API</a></td>
+      <td><img src="img/tick.png"> <a href="http://yonik.com/json-facet-api/">New JSON faceting API as of Solr 5.x</a></td>
       <td><img src="img/tick.png"> <a href="http://www.elasticsearch.org/blog/data-visualization-elasticsearch-aggregations" rel="nofollow">blog post</a></td>
     </tr>
     <tr>
@@ -268,9 +273,19 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"></td>
     </tr>
     <tr>
-      <td>Spellcheck</td>
+      <td>Query Re-Ranking <a href="#" title="Query Re-Ranking allows you to run a simple query (A) for matching documents and then re-rank the top N documents using the scores from a more complex query (B)." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/tick.png"> <a href="http://www.elasticsearch.org/guide/reference/api/search/suggest/">Suggest API</a></td>
+      <td><img src="img/tick.png"> via <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-rescore.html">Rescoring</a> or a <a href="https://github.com/codelibs/elasticsearch-dynarank">a plugin</a></td>
+    </tr>
+    <tr>
+      <td>Index-based Spellcheck <a href="#" title="Performs spellcheck recommendations based on words/terms that exist in the index." class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"></td>
+      <td><img src="img/tick.png"> <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters-phrase.html">Phrase Suggester</a></td>
+    </tr>
+    <tr>
+      <td>Wordlist-based Spellcheck <a href="#" title="Performs spellcheck recommendations based on a wordlist, for example, a dictionary file or a list of user queries." class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"></td>
+      <td><img src="img/cross.png"></td>
     </tr>
     <tr>
       <td>Autocomplete</td>
@@ -283,10 +298,15 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"><a href="https://github.com/elasticsearch/elasticsearch/issues/1066#issuecomment-8625739">workaround</a></td>
     </tr>
     <tr>
-      <td>Joins <a href="#" title="A method of searching on inter-document relationships, just like SQL joins." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> Joined index has to be single-shard and replicated across all nodes.</td>
+      <td>Intra-index joins <a href="#" title="A method of searching on inter-document relationships, just like SQL joins." class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"> via parent-child query</td>
       <td><img src="img/tick.png"> via <i>has_children</i> and <i>top_children</i> queries</td>
-    </tr>  
+    </tr>
+    <tr>
+      <td>Inter-index joins <a href="#" title="Joining between indexes" class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"> Joined index has to be single-shard and replicated across all nodes.</td>
+      <td><img src="img/cross.png"></td>
+    </tr>   
     <tr>
       <td>Resultset Scrolling <a href="#" title="Efficient scrolling/paging of large result sets" class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"> New to 4.7.0</td>
@@ -378,13 +398,18 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Pluggable update workflow <a href="#" title="You can modify the workflow of document inserts and updates." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"></td>
+      <td><img src="img/tick.png"> via <a href="https://cwiki.apache.org/confluence/display/solr/Update+Request+Processors" target="_blank">UpdateRequestProcessor</a></td>
       <td><img src="img/cross.png"></td>
     </tr> 
     <tr>
       <td>Pluggable Analyzers/Tokenizers</td>
       <td><img src="img/tick.png"></td>
       <td><img src="img/tick.png"></td>
+    </tr>
+    <tr>
+      <td>Pluggable QueryParsers <a href="#" title="An example of an alternative QueryParser is Solr's DisjunctionMaxQueryParser." class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"> </td>
+      <td><img src="img/tick.png"> </td>
     </tr>  
     <tr>
       <td>Pluggable Field Types</td>
@@ -401,7 +426,6 @@ include_once("inc/header.php");
       <td><img src="img/cross.png"></td>
       <td><img src="img/tick.png"></td>
     </tr> 
-    
     <tr>
       <td>Pluggable hashing <a href="#" title="See Hash-based deduplication above" class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
@@ -411,7 +435,7 @@ include_once("inc/header.php");
     <tr>
       <td>Pluggable webapps <a href="#" title="Webapps integrated with the application" class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/cross.png"></td>
-      <td><img src="img/tick.png"> site plugin</td>
+      <td><img src="img/cross.png"> <font color=maroon>[site plugins DEPRECATED in 5.x]</font> <a href="https://www.elastic.co/blog/running-site-plugins-with-elasticsearch-5-0">blog post</a></td>
     </tr>
     
      <tr>

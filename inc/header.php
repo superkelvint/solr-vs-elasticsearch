@@ -6,9 +6,9 @@ define('BASEURL', 'http://localhost/solr-vs-elasticsearch.com/');
 } else {
 define('BASEURL', 'http://solr-vs-elasticsearch.com/');
 }
-$solr_version = "Solr 5.3.0";
-$es_version = "ElasticSearch 2.0";
-$title_suffix = " - Solr vs ElasticSearch.com";
+$solr_version = "Solr 6.2.1";
+$es_version = "ElasticSearch 5.0";
+$title_suffix = " - Solr vs Elasticsearch.com";
 //ob_start();?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
