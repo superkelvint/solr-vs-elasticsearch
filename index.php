@@ -21,7 +21,7 @@ include_once("inc/header.php");
     <tbody>
     <tr>
       <td>Format</td>
-      <td>XML,CSV,JSON</td>
+      <td>XML, CSV, JSON</td>
       <td>JSON</td>
     </tr>  
     <tr>
@@ -275,7 +275,7 @@ include_once("inc/header.php");
     <tr>
       <td>Query Re-Ranking <a href="#" title="Query Re-Ranking allows you to run a simple query (A) for matching documents and then re-rank the top N documents using the scores from a more complex query (B)." class="tt"><img src="img/help.png"></a></td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/tick.png"> via <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-rescore.html">Rescoring</a> or a <a href="https://github.com/codelibs/elasticsearch-dynarank">a plugin</a></td>
+      <td><img src="img/tick.png"> via <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-rescore.html">Rescoring</a> or <a href="https://github.com/codelibs/elasticsearch-dynarank">a plugin</a></td>
     </tr>
     <tr>
       <td>Index-based Spellcheck <a href="#" title="Performs spellcheck recommendations based on words/terms that exist in the index." class="tt"><img src="img/help.png"></a></td>
@@ -569,7 +569,7 @@ include_once("inc/header.php");
     <tr>
       <td>Web Admin interface </td>
       <td><img src="img/tick.png"> bundled with Solr</td>
-      <td><img src="img/tick.png"> Marvel and via site plugins: <a href="https://github.com/mobz/elasticsearch-head" rel="nofollow">elasticsearch-head</a>, <a href="http://bigdesk.org" rel="nofollow">bigdesk</a>, <a href="https://github.com/lmenezes/elasticsearch-kopf" rel="nofollow">kopf</a>, <a href="https://github.com/royrusso/elasticsearch-HQ" rel="nofollow">elasticsearch-HQ</a>, <a href="https://github.com/andrewvc/elastic-hammer" rel="nofollow">Hammer</a></td>
+      <td><img src="img/tick.png"> Marvel or Kibana apps</td>
     </tr>
     <tr>
       <td>Visualisation</td>
