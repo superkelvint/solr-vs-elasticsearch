@@ -77,7 +77,7 @@ include_once("inc/header.php");
     <tbody> 
     <tr>
       <td>Master-slave replication</td>
-      <td><img src="img/tick.png"> <b>Only in non-SolrCloud.</b> In SolrCloud, behaves identically to ES.</td>
+      <td><img src="img/tick.png"> </td>
       <td><img src="img/cross.png"> Not an issue because shards are replicated across nodes.</td>
     </tr>
     <tr>
@@ -138,8 +138,8 @@ include_once("inc/header.php");
     </tr>  
     <tr>
       <td>Query-time synonyms <a href="#" title="You can specify synonyms either through term expansion, or term substitution." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> especially via <a href="https://github.com/healthonnet/hon-lucene-synonyms">hon-lucene-synonyms</a></td>
-      <td><img src="img/cross.png"> Technically, yes, but practically no because multi-word/phrase query-time synonyms are not supported. See <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/multi-word-synonyms.html">ES docs</a> and <a href="https://nolanlawson.com/2012/10/31/better-synonym-handling-in-solr/">hon-lucene-synonyms</a> blog for nuances.</td>
+      <td><img src="img/tick.png"> Solr 6 provides proper multi-word synonyms via SynonymGraphFilter</td>
+      <td><img src="img/tick.png"> Synonym Graph Token Filter is in beta in ES 6.2</td>
     </tr>  
     <tr>
       <td>Multiple indexes <a href="#" title="Lucene stores documents in an index. This feature allows you to manage multiple indices from a single installation. The RDBMS-equivalent of an index is a database." class="tt"><img src="img/help.png"></a></td>
@@ -158,7 +158,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Schemaless <a href="#" title="A mode that requires no up-front schema modifications, in which previously unknown fields' types are guessed based on the values in added/updated documents, and are then added to the schema prior to processing the update." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> 4.4+</td>
+      <td><img src="img/tick.png"> </td>
       <td><img src="img/tick.png"> </td>
     </tr>  
     <tr>
@@ -191,6 +191,11 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"></td>
       <td><img src="img/tick.png"> <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/current/mapper-murmur3.html">Murmur plugin</a> or <a href="https://github.com/YannBrrd/elasticsearch-entity-resolution">ER plugin</a></td>
     </tr>
+	<tr>
+      <td>Index-time sorting <a href="#" title="Stores documents sorted at index-time, reducing the performance overhead of sorting at query-time" class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/cross.png"></td>
+      <td><img src="img/tick.png"></td>
+    </tr>
     </tbody>  
   </table>
   <br/>
@@ -209,7 +214,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Structured Query DSL <a href="#" title="A Domain-Specific Language which allows you to build complex queries not otherwise possible with just a Lucene query string." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"> Need to programmatically create queries if going beyond Lucene query syntax.</td>
+      <td><img src="img/tick.png"> <a href="https://lucene.apache.org/solr/guide/7_1/json-query-dsl.html">JSON Query DSL</a> is new in Solr 7.x</td>
       <td><img src="img/tick.png"></td>
     </tr> 
     <tr>
@@ -234,7 +239,7 @@ include_once("inc/header.php");
     </tr>
     <tr>
       <td>Advanced Faceting <a href="#" title="Advanced operations such as hierarchical faceting, metrics and bucketing" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> <a href="http://yonik.com/json-facet-api/">New JSON faceting API as of Solr 5.x</a></td>
+      <td><img src="img/tick.png"> New <a href="https://lucene.apache.org/solr/guide/7_2/analytics.html">Analytics component</a> and <a href="http://yonik.com/json-facet-api/">JSON faceting API</a></td>
       <td><img src="img/tick.png"> <a href="http://www.elasticsearch.org/blog/data-visualization-elasticsearch-aggregations" rel="nofollow">blog post</a></td>
     </tr>
     <tr>
@@ -264,7 +269,7 @@ include_once("inc/header.php");
     </tr>        
     <tr>
       <td>Push Queries <a href="#" title="Think of push queries as the reverse operation of indexing and then searching. Instead of sending docs, indexing them, and then running queries. One sends queries, registers them, and then sends docs and finds out which queries match that doc." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"><a href="https://issues.apache.org/jira/browse/SOLR-4587">JIRA issue</td>
+      <td><img src="img/tick.png"> Via <a href="https://lucene.apache.org/solr/guide/7_2/streaming-expressions.html">Streaming Expressions</a></td>
       <td><img src="img/tick.png"> Percolation. Distributed percolation supported in 1.0</td>
     </tr>
     <tr>
@@ -292,6 +297,18 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"> </td>
       <td><img src="img/tick.png"> </td>
     </tr>
+
+    <tr>
+      <td>Document-oriented Autocomplete</td>
+      <td><img src="img/cross.png"> Solr suggester return phrases not documents.</td>
+      <td><img src="img/tick.png"> </td>
+    </tr>
+    <tr>
+      <td>Learning to Rank</td>
+      <td><img src="img/tick.png"> </td>
+      <td><img src="img/tick.png"> Via <a href="https://github.com/o19s/elasticsearch-learning-to-rank">https://github.com/o19s/elasticsearch-learning-to-rank</a></td>
+    </tr>
+
     <tr>
       <td>Query elevation  <a href="#" title="Query elevation enables you to configure the top results for a given query regardless of the normal lucene scoring. This is sometimes called 'sponsored search', 'editorial boosting' or 'best bets'." class="tt"><img src="img/help.png"></a> </td>
       <td><img src="img/tick.png"></td>
@@ -309,7 +326,7 @@ include_once("inc/header.php");
     </tr>   
     <tr>
       <td>Resultset Scrolling <a href="#" title="Efficient scrolling/paging of large result sets" class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/tick.png"> New to 4.7.0</td>
+      <td><img src="img/tick.png"> </td>
       <td><img src="img/tick.png"> via <i>scan</i> search type</td>
     </tr>  
     <tr>
@@ -357,6 +374,18 @@ include_once("inc/header.php");
       <td><img src="img/tick.png"></td>
       <td><img src="img/tick.png"></td>
     </tr> 
+    <tr>
+      <td>SQL queries</td>
+      <td><img src="img/tick.png"> Via <a href="https://lucene.apache.org/solr/guide/7_2/parallel-sql-interface.html#parallel-sql-interface">Parallel SQL</a>. SolrCloud only</td>
+      <td><img src="img/cross.png"></td>
+    </tr> 
+    <tr>
+      <td>Distributed Map/Reduce processing</td>
+      <td><img src="img/tick.png"> Via <a href="https://lucene.apache.org/solr/guide/7_2/streaming-expressions.html">Streaming Expressions</a>. SolrCloud only</td>
+      <td><img src="img/cross.png"></td>
+    </tr> 
+
+
     <!--       
     
     <tr>
@@ -499,18 +528,18 @@ include_once("inc/header.php");
     </tr>  
     <tr>
       <td>Automatic shard rebalancing <a href="#" title="Shards are automatically rebalanced to adhere to the desired replication factor." class="tt"><img src="img/help.png"></a></td>
-      <td><img src="img/cross.png"></td>
+      <td><img src="img/tick.png"> Solr Autoscaling is new in Solr 7.</td>
       <td><img src="img/tick.png"> it can be machine, rack, availability zone, and/or data center aware.  Arbitrary tags can be assigned to nodes and it can be configured to not assign the same shard and its replicates on a node with the same tags.</td>
     </tr> 
     <tr>
       <td>Change # of shards</td>
       <td><img src="img/tick.png"> Shards can be added (when using implicit routing) or split (when using compositeId).  Cannot be lowered.  Replicas can be increased anytime.</td>
-      <td><img src="img/cross.png"> each index has 5 shards by default. Number of primary shards cannot be changed once the index is created. Replicas can be increased anytime.</td>
+      <td><img src="img/cross.png"> each index has 5 shards by default. Number of primary shards cannot be changed once the index is created. Replicas can be increased anytime. The <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.2/indices-shrink-index.html">Shrink Index API</a> lets you reindex the index into a new index with fewer shards. </td>
     </tr> 
     <tr>
       <td>Shard splitting</td>
       <td><img src="img/tick.png"></td>
-      <td><img src="img/cross.png"></td>
+      <td><img src="img/cross.png"> You can use the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.2/indices-split-index.html">Index Splitting API</a> to index to a new index with primary shards split.</td>
     </tr> 
     <tr>
       <td>Relocate shards and replicas <a href="#" title="Move shards and replicas within a cluster" class="tt"><img src="img/help.png"></a></td>
@@ -524,8 +553,13 @@ include_once("inc/header.php");
     </tr> 
     <tr>
       <td>Pluggable shard/replica assignment </td>
-      <td><img src="img/tick.png"> <a href="https://cwiki.apache.org/confluence/display/solr/Rule-based+Replica+Placement">Rule-based replica assignment</a></td>
+      <td><img src="img/tick.png"> New Autoscaling API replaces the old rule-based replica assignment</td>
       <td><img src="img/tick.png"> Probabilistic shard balancing with <a href="https://github.com/datarank/tempest">Tempest plugin</a></td>
+    </tr> 
+	<tr>
+      <td>Avoid duplicate indexing on replicas <a href="#" title="Each document that gets indexed on the master is by default reindexed on each replica, incurring unnecessary overhead." class="tt"><img src="img/help.png"></a></td>
+      <td><img src="img/tick.png"> Solr 7 provides 3 kinds of replica types: NRT (default and the pre-Solr 7 behavior), tlog and pull. Non-SolrCloud master-slave replication can be achieved with tlog replica types.</td>
+      <td><img src="img/cross.png"></td>
     </tr> 
     <tr>
       <td>Consistency</td>
