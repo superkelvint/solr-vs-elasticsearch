@@ -621,7 +621,30 @@ include_once("inc/header.php");
   </table> 
  
   <br/><hr/>
-  <h2 class="secthead">Thoughts...</h2>
+  <h2 class="secthead">My recommendations as of May 2018</h2>
+<p>Here are some simple guidelines if the crazy long grid of features above did not help.</p>
+<h3>Choose Solr if any of the following are true...</h3>
+<li>Your team consists mainly of Java programmers</li>
+<li>You're already using ZooKeeper in your stack</li>
+<li>You're already using Java in your stack</li>
+<li>You are building a search application that has specific and nuanced relevancy requirements</li>
+<li>You are building an ecommerce, job, or product search engine</li>
+<li>Search is a central part of your product and user experience and there is the organizational mandate for search to be a core strength</li>
+
+
+<h3>Choose Elasticsearch if any of the following are true...</h3>
+<li>Your team consists mainly of Ruby/PHP/Python/full stack programmers (and your application does not have specific and nuanced relevancy requirements)</li>
+<li>You live and breathe JSON</li>
+<li>You already use Kibana/ELK for managing your logs</li>
+<li>Your application is analytics-heavy</li>
+
+<h3>If in doubt...</h3>
+<p>Every serious search application I have worked on has required in-depth customization of the search workflow and relevancy tweaks, and at the time of writing, this is simply not possible in Elasticsearch without major hacking. If in doubt, go Solr.</p>
+
+  <br/><hr/>
+
+
+  <h2 class="secthead">Thoughts... (somewhat outdated)</h2>
   <p>I'm embedding my answer to this "Solr-vs-Elasticsearch" Quora question verbatim here:</p>
   <blockquote>
   <p>
